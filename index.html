@@ -3,14 +3,49 @@
 <head>
     <meta charset="UTF-8" name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Coin Calculator</title>
-    <script src="js/coin-calculator.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="container">
     <div id="calculator">
-
+        <p class="center font-san">COIN COUNTER</p>
+        <div id="coins" style="width: 240px; margin: 0 auto">
+            <ul>
+                <li>
+                    <div style="display: inline-block; position: relative">
+                        <input id="coin-1" class="circle font-san coin-size" value="25">
+                        <span id="coin-1-notification" class="notification">0</span>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: inline-block; position: relative">
+                        <input id="coin-2" class="circle font-san coin-size" value="5">
+                        <span id="coin-2-notification" class="notification">0</span>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: inline-block; position: relative">
+                        <input id="coin-3" class="circle font-san coin-size" value="10">
+                        <span id="coin-3-notification" class="notification">0</span>
+                    </div>
+                </li>
+                <li>
+                    <div style="display: inline-block; position: relative">
+                        <input id="coin-4" class="circle font-san coin-size" value="1">
+                        <span id="coin-4-notification" class="notification">0</span>
+                    </div>
+                </li>
+            </ul>
+            <div>
+                <input id="total-coin" value="0" type="text" pattern="[0-9]*">
+            </div>
+            <br />
+            <br />
+            <button id="calculate-button">CALCULATE</button>
+        </div>
     </div>
 </div>
 </body>
+<script src="js/coin.js"></script>
+<script src="js/coin-calculator.js"></script>
 </html>
