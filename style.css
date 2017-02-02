@@ -36,7 +36,7 @@ li {
 }
 
 #total-coin {
-    width: 100%;
+    width: 225px;
     height: 44px;
     font-size: 22px;
     text-align: right;
@@ -44,6 +44,7 @@ li {
     background-color: #FAFAFA;
     outline: none;
     border: 1px solid #ccc;
+    padding-right: 15px;
 }
 
 #calculate-button {
