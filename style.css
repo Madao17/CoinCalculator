@@ -45,6 +45,7 @@ li {
     outline: none;
     border: 1px solid #ccc;
     padding-right: 15px;
+    margin-top: 30px;
 }
 
 #calculate-button {
