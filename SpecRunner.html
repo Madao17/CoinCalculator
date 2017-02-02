@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v2.5.2</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-2.5.2/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-2.5.2/jasmine.css">
+
+  <div style="visibility: hidden; height: 0">
+    <input id="coin-1" class="circle font-san coin-size" value="25">
+    <span id="coin-1-notification" class="notification">0</span>
+    <input id="coin-2" class="circle font-san coin-size" value="5">
+    <span id="coin-2-notification" class="notification">0</span>
+    <input id="coin-3" class="circle font-san coin-size" value="10">
+    <span id="coin-3-notification" class="notification">0</span>
+    <input id="coin-4" class="circle font-san coin-size" value="1">
+    <span id="coin-4-notification" class="notification">0</span>
+    <input id="total-coin" value="0" type="text" pattern="[0-9]*">
+    <button id="calculate-button">CALCULATE</button>
+  </div>
+
+
+  <script src="lib/jasmine-2.5.2/jasmine.js"></script>
+  <script src="lib/jasmine-2.5.2/jasmine-html.js"></script>
+  <script src="lib/jasmine-2.5.2/boot.js"></script>
+
+  <!-- include source files here... -->
+  <script src="js/coin.js"></script>
+  <script src="js/coin-calculator.js"></script>
+
+  <!-- include spec files here... -->
+  <script src="spec/CoinSpec.js"></script>
+  <script src="spec/CalculatorSpec.js"></script>
+
+</head>
+
+<body>
+</body>
+</html>

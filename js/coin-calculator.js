@@ -5,14 +5,24 @@
 var total = 0;
 
 var coins = [
-    new Coin(25, 0, 'coin-1', 'coin-1-notification'),
-    new Coin(5, 0, 'coin-2', 'coin-2-notification'),
-    new Coin(10, 0, 'coin-3', 'coin-3-notification'),
-    new Coin(1, 0, 'coin-4', 'coin-4-notification')
+    createCoin(25, 0, 'coin-1', 'coin-1-notification'),
+    createCoin(5, 0, 'coin-2', 'coin-2-notification'),
+    createCoin(10, 0, 'coin-3', 'coin-3-notification'),
+    createCoin(1, 0, 'coin-4', 'coin-4-notification')
 ];
 
 var totalInputValue = document.getElementById('total-coin');
 var calculateBtn = document.getElementById('calculate-button');
+
+function sortCoins() {
+    coins.sort(function(coinA, coinB) {
+        return coinB.value - coinA.value;
+    });
+}
+
+function createCoin(value, count, coinId, notificationId) {
+    return new Coin(value, count, coinId, notificationId);
+}
 
 calculateBtn.addEventListener('click', function() {
     sortCoins();
@@ -27,10 +37,3 @@ calculateBtn.addEventListener('click', function() {
         }
     });
 });
-
-
-function sortCoins() {
-    coins.sort(function(coinA, coinB) {
-       return coinB.value - coinA.value;
-    });
-}
