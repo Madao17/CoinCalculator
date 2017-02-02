@@ -14,24 +14,43 @@ describe('Coin Calculator', function () {
 
     });
 
-    describe('Initialization', function() {
+    describe('Initialization', function () {
 
-        it('should create a coin list', function() {
+        it('should create a coin list', function () {
             expect(coins).toBeTruthy();
             expect(coins.length).toBe(4);
         });
 
-        it('should initialize totalInputValue', function() {
+        it('should initialize totalInputValue', function () {
             expect(totalInputValue).toBeTruthy();
         });
 
-        it('should initialize calculateBtn', function() {
+        it('should initialize calculateBtn', function () {
             expect(calculateBtn).toBeTruthy();
         });
     });
 
-    describe('Calculator',function(){
-        it('should calculate the amount of coins for the given value', function() {
+    describe('createCoin', function () {
+
+        var dummyCoin, dummyNotif;
+
+        beforeEach(function() {
+            dummyCoin = document.createElement('div');
+            dummyNotif = document.createElement('div');
+            dummyCoin.id = 'id';
+            dummyNotif.id = 'nid';
+        });
+
+        it('should create coin object', function () {
+            var newCoin = createCoin(10, 0, 'id', 'nid');
+            expect(newCoin).toBeTruthy();
+            expect(newCoin.value).toBe(10);
+            expect(newCoin.count).toBe(0);
+        });
+    });
+
+    describe('Calculator', function () {
+        it('should calculate the amount of coins for the given value', function () {
             totalInputValue.value = 41;
             calculateBtn.click();
             expect(coins[0].count).toBe(1);
