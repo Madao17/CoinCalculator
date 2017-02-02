@@ -30,6 +30,32 @@ describe('Coin Calculator', function () {
         });
     });
 
+    describe('sortCoins', function() {
+
+        afterEach(function(){
+            coins = [
+                createCoin(25, 0, 'coin-1', 'coin-1-notification'),
+                createCoin(5, 0, 'coin-2', 'coin-2-notification'),
+                createCoin(10, 0, 'coin-3', 'coin-3-notification'),
+                createCoin(1, 0, 'coin-4', 'coin-4-notification')
+            ];
+        });
+
+        it('should sort the coins list by its value', function() {
+            coins[0].value = 10;
+            coins[1].value = 25;
+            coins[2].value = 1;
+            coins[3].value = 7;
+
+            sortCoins();
+
+            expect(coins[0].coinElement.id).toBe('coin-2');
+            expect(coins[1].coinElement.id).toBe('coin-1');
+            expect(coins[2].coinElement.id).toBe('coin-4');
+            expect(coins[3].coinElement.id).toBe('coin-3');
+        });
+    });
+
     describe('createCoin', function () {
 
         var dummyCoin, dummyNotif;
