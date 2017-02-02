@@ -11,7 +11,6 @@ describe('Coin Calculator', function () {
         dummyElement.style.visibility = 'hidden';
         document.getElementById = jasmine.createSpy('HTML Element')
             .and.returnValue(dummyElement);
-
     });
 
     describe('Initialization', function () {
@@ -76,6 +75,16 @@ describe('Coin Calculator', function () {
     });
 
     describe('Calculator', function () {
+
+        beforeEach(function() {
+            coins = [
+                createCoin(25, 0, 'coin-1', 'coin-1-notification'),
+                createCoin(5, 0, 'coin-2', 'coin-2-notification'),
+                createCoin(10, 0, 'coin-3', 'coin-3-notification'),
+                createCoin(1, 0, 'coin-4', 'coin-4-notification')
+            ];
+        });
+
         it('should calculate the amount of coins for the given value', function () {
             totalInputValue.value = 41;
             calculateBtn.click();
@@ -83,6 +92,17 @@ describe('Coin Calculator', function () {
             expect(coins[1].count).toBe(1);
             expect(coins[2].count).toBe(1);
             expect(coins[3].count).toBe(1);
-        })
+        });
+
+        it('should calculate the amount of coins for the given value after the value has changed', function() {
+            coins[1].value = 6;
+            totalInputValue.value = 41;
+            calculateBtn.click();
+            console.log(coins[0], coins[1], coins[2], coins[3]);
+            expect(coins[0].count).toBe(1);
+            expect(coins[1].count).toBe(1);
+            expect(coins[2].count).toBe(1);
+            expect(coins[3].count).toBe(0);
+        });
     });
 });
